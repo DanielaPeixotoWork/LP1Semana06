@@ -14,4 +14,9 @@ public class Color
         Blue = blue;
     }
     
+    public void PrintColor()
+    {
+        Console.WriteLine($"RGB: ({Red}, {Green}, {Blue})");
+    }
+    
 }
