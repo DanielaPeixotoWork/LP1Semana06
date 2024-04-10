@@ -4,10 +4,10 @@ namespace ColorSpheres
 {
     public class Color
     {
-        public int Red { get; set; }
-        public int Green { get; set; }
-        public int Blue { get; set; }
-        public int Alpha { get; set; }
+        public int Red { get; }
+        public int Green { get; }
+        public int Blue { get; }
+        public int Alpha { get; }
 
         public Color(int red, int green, int blue, int alpha)
         {
@@ -26,12 +26,14 @@ namespace ColorSpheres
             return (Red + Green + Blue) / 3;
         }
     }
+
     public class Sphere
     {
-
-        public Color Color { get; }
-        public double Radius { get; }
+        public readonly Color Color;
+        public double Radius { get; private set; }
         public int TimesThrown { get; private set; }
+
+        private const int MaxColorIntensity = 255;
 
         public Sphere(Color color, double radius)
         {
@@ -58,11 +60,11 @@ namespace ColorSpheres
             return TimesThrown;
         }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-
             Sphere sphere1 = new Sphere(new Color(255, 0, 0), 5.0);
             Sphere sphere2 = new Sphere(new Color(0, 255, 0), 7.0);
             Sphere sphere3 = new Sphere(new Color(0, 0, 255), 6.0);
