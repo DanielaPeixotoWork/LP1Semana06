@@ -26,4 +26,19 @@ namespace ColorSpheres
             return (Red + Green + Blue) / 3;
         }
     }
+    public class Sphere
+    {
+
+        public Color Color { get; }
+        public double Radius { get; }
+        public int TimesThrown { get; private set; }
+
+        public Sphere(Color color, double radius)
+        {
+            Color = color;
+            Radius = radius;
+            TimesThrown = 0;
+        }
+    }
 }
+
