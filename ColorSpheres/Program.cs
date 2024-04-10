@@ -16,5 +16,14 @@ namespace ColorSpheres
             Blue = blue;
             Alpha = alpha;
         }
+
+        public Color(int red, int green, int blue) : this(red, green, blue, 255)
+        {
+        }
+
+        public int GetGrey()
+        {
+            return (Red + Green + Blue) / 3;
+        }
     }
 }
