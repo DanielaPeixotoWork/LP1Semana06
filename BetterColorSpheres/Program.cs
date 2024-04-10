@@ -18,5 +18,34 @@ public class Color
     {
         Console.WriteLine($"RGB: ({Red}, {Green}, {Blue})");
     }
-    
+
+    public class Sphere
+    {
+
+    public double Radius { get; set; }
+
+    private Color _color;
+    public Color Color
+    {
+        get { return _color; }
+        set { _color = value; }
+    }
+
+    public double Volume { get; set; }
+    }
+
+    public Sphere(double radius, Color color)
+    {
+        Radius = radius;
+        Color = color;
+        Volume = 4 / 3 * Math.PI * Math.Pow(Radius, 3);
+    }
+
+    public void PrintSphereInfo()
+    {
+        Console.WriteLine($"Sphere Radius: {Radius}");
+        Color.PrintColor();
+        Console.WriteLine($"Volume: {Volume}");
+    }
 }
+
