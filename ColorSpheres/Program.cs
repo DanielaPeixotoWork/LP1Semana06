@@ -2,11 +2,19 @@
 
 namespace ColorSpheres
 {
-    class Program
+    public class Color
     {
-        static void Main(string[] args)
+        public int Red { get; set; }
+        public int Green { get; set; }
+        public int Blue { get; set; }
+        public int Alpha { get; set; }
+
+        public Color(int red, int green, int blue, int alpha)
         {
-            Console.WriteLine("Hello, World!");
+            Red = red;
+            Green = green;
+            Blue = blue;
+            Alpha = alpha;
         }
     }
 }
